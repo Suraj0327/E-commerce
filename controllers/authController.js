@@ -86,6 +86,7 @@ const registerController = async(req,res) => {
             success: true,
             message: 'Login successful',
             user: {
+                _id:user._id,
                 name: user.name,
                 email: user.email,
                 phone: user.phone,
@@ -103,3 +104,8 @@ const registerController = async(req,res) => {
     }
 };
 module.exports=loginController
+
+const testController=(req,res)=>{
+    res.send("protected route");
+}
+module.exports=testController
